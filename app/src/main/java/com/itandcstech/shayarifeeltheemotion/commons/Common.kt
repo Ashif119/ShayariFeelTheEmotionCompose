@@ -47,7 +47,7 @@ fun getList(): List<ShayariModel> {
             "Purane dost wo sharaab hain, jo jitni purani ho utni hi nasha deti hain.",
             "Dost wo hai jo aapki aankhon mein aansu dekh kar kahe, 'Ruk main abhi aata hoon'.",
             "Sachi dosti mein 'thank you' aur 'sorry' nahi hota, bas ek dusre ka sath hota hai.",
-            "Doston ke bina zindagi adhuri hai, dosti hi har khushi ki manjuri hai."
+            "Doston ke bina zindagi adhuri hai, dosti hi har khushi ki manjuri hai.",
         )),
 
         ShayariModel(R.drawable.best,"Happiness", listOf(

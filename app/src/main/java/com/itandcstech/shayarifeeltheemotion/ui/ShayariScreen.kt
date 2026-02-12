@@ -59,7 +59,7 @@ fun ShayariScreen(
             title = {
                 Text(title)
             },
-            navigationIcon = { BackButton(color = Color.White) }
+            navigationIcon = { BackButton(color = Color.White, mainNavController = mainNavController) }
         )
     }) { paddingValues ->
         Column(

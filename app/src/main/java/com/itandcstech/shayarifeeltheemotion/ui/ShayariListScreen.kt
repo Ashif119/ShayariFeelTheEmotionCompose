@@ -43,7 +43,7 @@ fun ShayariListScreen(mainNavController: NavHostController, title: String = "Sha
             title = {
                 Text(title)
             },
-            navigationIcon = { BackButton(color = Color.White) }
+            navigationIcon = { BackButton(color = Color.White, mainNavController = mainNavController) }
         )
     }) { paddingValues ->
         Column(

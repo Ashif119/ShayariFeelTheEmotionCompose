@@ -32,8 +32,6 @@ import androidx.navigation.NavHostController
 import com.itandcstech.shayarifeeltheemotion.commons.getList
 import com.itandcstech.shayarifeeltheemotion.routes.Destinations
 import com.itandcstech.shayarifeeltheemotion.ui.composables.BackButton
-
-
 /**
  * @Created by Ashif on 11-02-2026
  * Know more about author at https://ashif.nexmerce.in
@@ -51,7 +49,7 @@ fun CategoryScreen(mainNavController: NavHostController) {
             title = {
                 Text("Category")
             },
-            navigationIcon = { BackButton(color = Color.White) }
+            navigationIcon = { BackButton(color = Color.White, mainNavController = mainNavController) }
         )
     }) { paddingValues ->
         Column(
