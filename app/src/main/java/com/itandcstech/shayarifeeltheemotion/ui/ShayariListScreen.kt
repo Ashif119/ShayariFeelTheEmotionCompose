@@ -1,5 +1,4 @@
 package com.itandcstech.shayarifeeltheemotion.ui
-
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -25,7 +24,6 @@ import androidx.navigation.NavHostController
 import com.itandcstech.shayarifeeltheemotion.commons.getList
 import com.itandcstech.shayarifeeltheemotion.routes.Destinations
 import com.itandcstech.shayarifeeltheemotion.ui.composables.BackButton
-
 /**
  * @Created by Ashif on 11-02-2026
  * Know more about author at https://ashif.nexmerce.in
@@ -58,7 +56,7 @@ fun ShayariListScreen(mainNavController: NavHostController, title: String = "Sha
             val finalList = shayariList[0]
             finalList.list?.let {list->
                 LazyColumn() {
-                    items(list) { it ->
+                    items(list) {
                         Card(modifier = Modifier
                             .fillMaxWidth()
                             .padding(8.dp)
@@ -70,7 +68,7 @@ fun ShayariListScreen(mainNavController: NavHostController, title: String = "Sha
                         ) {
                             Text(
                                 modifier = Modifier.padding(12.dp),
-                                text = it.toString(),
+                                text = it,
                                 style = MaterialTheme.typography.titleMedium
                             )
                         }

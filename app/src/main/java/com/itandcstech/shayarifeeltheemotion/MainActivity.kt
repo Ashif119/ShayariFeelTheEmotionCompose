@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.itandcstech.shayarifeeltheemotion.routes.AppRoutes
+import com.itandcstech.shayarifeeltheemotion.routes.AppNavigation
 import com.itandcstech.shayarifeeltheemotion.ui.theme.ShayariFeelTheEmotionTheme
 
 class MainActivity : ComponentActivity() {
@@ -13,7 +13,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ShayariFeelTheEmotionTheme {
-                AppRoutes()
+                AppNavigation()
             }
         }
     }

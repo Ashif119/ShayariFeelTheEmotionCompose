@@ -8,6 +8,7 @@ import androidx.annotation.DrawableRes
  */
 sealed class Destinations(val route: String, val label: String, @DrawableRes val icon:Int?=null) {
     data object SplashScreen : Destinations("splashScreen", "SplashScreen")
+    data object OnBoardingScreen : Destinations("onBoardingScreen", "OnBoardingScreen")
     data object CategoryScreen : Destinations("categoryScreen", "CategoryScreen")
     data object ShayariListScreen : Destinations("shayariListScreen", "ShayariListScreen")
     data object ShayariScreen : Destinations("shayariScreen", "ShayariScreen")
