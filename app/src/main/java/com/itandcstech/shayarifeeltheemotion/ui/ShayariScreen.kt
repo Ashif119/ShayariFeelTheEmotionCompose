@@ -14,9 +14,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Send
-import androidx.compose.material.icons.filled.Share
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -33,9 +30,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.itandcstech.shayarifeeltheemotion.R
 import com.itandcstech.shayarifeeltheemotion.ui.composables.BackButton
 
 /**
@@ -87,8 +86,10 @@ fun ShayariScreen(
                         style = MaterialTheme.typography.titleMedium,
                     )
                     HorizontalDivider(thickness = 0.4.dp, color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.5f))
-                    Row(modifier = Modifier.fillMaxWidth()
-                        .padding(vertical = 8.dp),
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(vertical = 8.dp),
                         horizontalArrangement = Arrangement.SpaceEvenly
                     ) {
                         // Copy Button
@@ -98,7 +99,11 @@ fun ShayariScreen(
                             clipboard.setPrimaryClip(clip)
                             Toast.makeText(context, "Copied to clipboard!", Toast.LENGTH_SHORT).show()
                         }) {
-                            Icon(imageVector = Icons.Default.Send, contentDescription = "Copy")
+                            Icon(
+                                modifier = Modifier.padding(4.dp),
+                                painter = painterResource(id = R.drawable.copy),
+                                contentDescription = "Copy"
+                            )
                         }
                         /// Share Button
                         IconButton(onClick = {
@@ -108,7 +113,11 @@ fun ShayariScreen(
                             }
                             context.startActivity(Intent.createChooser(sendIntent, "Share via"))
                         },){
-                            Icon(imageVector = Icons.Default.Share, contentDescription = "Share")
+                            Icon(
+                                modifier = Modifier.padding(4.dp),
+                                painter = painterResource(id = R.drawable.send),
+                                contentDescription = "Share"
+                            )
                         }
                     }
                 }

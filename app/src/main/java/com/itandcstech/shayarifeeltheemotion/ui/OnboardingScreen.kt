@@ -29,6 +29,8 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -84,7 +86,7 @@ fun OnBoardingScreen(onFinished: () -> Unit) {
             )
     ) {
         Column(
-            modifier = Modifier.fillMaxSize()
+            modifier = Modifier.fillMaxSize().padding(vertical = 16.dp)
         ) {
             // App Title at the top center as seen in your image
             Text(
@@ -93,6 +95,7 @@ fun OnBoardingScreen(onFinished: () -> Unit) {
                     .fillMaxWidth()
                     .padding(top = 48.dp),
                 style = MaterialTheme.typography.headlineMedium,
+                fontFamily = FontFamily.SansSerif,
                 color = Color.White,
                 textAlign = TextAlign.Center,
                 fontWeight = FontWeight.Light
@@ -116,12 +119,14 @@ fun OnBoardingScreen(onFinished: () -> Unit) {
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 // Skip Button
-                Box(
-                    modifier = Modifier
-                        .padding(16.dp),
-                ) {
-                    TextButton(onClick = onFinished) {
-                        Text("Skip", color = Color.White.copy(alpha = 0.7f))
+                if (pagerState.currentPage < pages.size - 1){
+                    Box(
+                        modifier = Modifier
+                            .padding(16.dp),
+                    ) {
+                        TextButton(onClick = onFinished) {
+                            Text("Skip", color = Color.White.copy(alpha = 0.7f))
+                        }
                     }
                 }
 
